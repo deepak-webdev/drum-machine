@@ -1,25 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const keys = ["Q", "W", "E", "A", "S", "D", "Z", "X", "C"];
+const App = () => (
+  <div id="dispaly" className="display">
+    {keys.map((key, idx) => (
+      <Box text={key} key={idx} />
+    ))}
+  </div>
+);
 
+const Box = (props) => <div className="box">{props.text}</div>;
 export default App;
